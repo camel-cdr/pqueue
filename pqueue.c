@@ -59,10 +59,8 @@ main(int argc, char **argv)
 	/* open initial children */
 	for (i = 0; i < nprocs; ++i) {
 		--count;
-		if (fork() == 0) {
-			execl("/bin/sh", "sh", "-c", argv[0], NULL);
-			return EXIT_FAILURE;
-		}
+		if (fork() == 0)
+			return system(argv[0]);
 	}
 
 	/* reopen children */
@@ -76,10 +74,8 @@ main(int argc, char **argv)
 		if (!loop && count-- <= 0)
 			break;
 
-		if (fork() == 0) {
-			execl("/bin/sh", "sh", "-c", argv[0], NULL);
-			return EXIT_FAILURE;
-		}
+		if (fork() == 0)
+			return system(argv[0]);
 	}
 
 	/* wait for all children to close */
