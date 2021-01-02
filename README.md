@@ -10,7 +10,7 @@ pqueue -c 100 "time -p ./a.out >/dev/null" 2>&1 | \
 ```
 
 ### Bruteforce best hash parameter
-Where`./a.out` prints the number of hash collisions and the parameters used.
+Where `./a.out` prints the number of hash collisions and the parameters used.
 ```sh
 pqueue "./a.out" > /tmp/tmp &
 watch "sort -n /tmp/tmp | tail"
