@@ -1,25 +1,5 @@
-/* arg.h -- A posix complient argument parser based on plan9's arg(3) */
-
-/*
- * program -a -b -c
- * program -abc
- * program --reverse
- *
- * program -i input.txt -o output.txt
- * program -iinput.txt -ooutput.txt
- *
- * program -abco output.txt
- * program -abcooutput.txt
- *
- * program -o -a   # two separate flags
- * program -o-a    # -c with argument "-a"
- *
- * program --output output.txt
- * program --output=output.txt
- *
- * #     options    non options
- * program -a -b -- -x foo bar
- */
+/* arg.h -- A posix complient argument parser based on plan9's arg(3)
+ * New versions available at https://github.com/camel-cdr/cauldron */
 
 #ifndef ARG_H_INCLUDED
 

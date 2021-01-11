@@ -1,5 +1,7 @@
+.POSIX:
+
 pqueue: pqueue.c
-	${CC} $< -o $@
+	${CC} pqueue.c -o $@
 
 install: pqueue
 	cp -f pqueue /usr/local/bin/pqueue
