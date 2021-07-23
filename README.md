@@ -5,8 +5,7 @@ A minimal cli tool to execute shell commands parallel, that allows you to easily
 
 ### Calculate average execution time
 ```sh
-pqueue -c 100 "time -p ./a.out >/dev/null" 2>&1 | \
-	grep -o '[0-9]\.[0-9]*' | awk '{x+=$1; c++} END{print x/c}'
+pqueue -c 100 "time -p ./a.out >/dev/null" 2>&1 | awk '/real/{x+=$2; c++} END{print x/c}'
 ```
 
 ### Bruteforce best hash parameter
